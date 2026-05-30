@@ -1,11 +1,33 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Socials from '../components/Socials.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Caleb Fringer">
+    <main>
+        <h1>Caleb Fringer</h1>
+        <h2>Software Engineer</h2>
+        <Socials />
+    </main>
 </Layout>
+
+<style>
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    h1 {
+        font-size: 4rem;
+        padding: 16px 32px;
+        margin: 32vh 16px 16px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin: 0px;
+        margin-bottom: 16vh;
+    }
+</style>
