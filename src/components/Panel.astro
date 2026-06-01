@@ -1,0 +1,56 @@
+---
+const { panelItems } = Astro.props;
+---
+<script>
+    let tabLinks = document.getElementsByClassName("tab-link");
+    let tabContents = document.getElementsByClassName("tab-item");
+
+    function showItem(item) {
+        for (const tabItem of tabContents) {
+            if (tabItem.dataset.item === item) {
+                tabItem.classList.remove("hidden");
+            } else {
+                tabItem.classList.add("hidden");
+            }
+        }
+    }
+
+    for (const btn of tabLinks) {
+        let item = btn.dataset.item;
+        btn.addEventListener('click', () => showItem(item));
+    }
+</script>
+
+<div class="panel">
+    <div class="tabs">
+        {panelItems.map(item => (
+            <button data-item={item} class="tab-link">{item}</button>
+        ))}
+    </div>
+
+    <div class="tab-contents">
+        {panelItems.map((item, i) => { 
+            let classList = ["tab-item"];
+            if (i > 0) classList.push("hidden");
+            return (
+                <p class:list={classList} data-item={item}>
+                    Some data about {item}
+                </p>
+            )
+        })}
+    </div>
+</div>
+
+<style>
+    .panel {
+        border: 1px solid black;
+    }
+
+    .tab-item {
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+
