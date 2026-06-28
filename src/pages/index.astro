@@ -1,7 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Socials from '../components/Socials.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 import '../styles/global.css';
+
+import * as monkeyMinder from './projects/monkey-minder.md';
+const {frontmatter} = monkeyMinder;
+const Content = monkeyMinder.Content;
 ---
 
 <Layout title="Caleb Fringer">
@@ -16,6 +21,9 @@ import '../styles/global.css';
             <header>
                 <h2>Featured Work</h2>
             </header>
+            <ProjectCard frontmatter={ frontmatter }>
+                <Content />
+            </ProjectCard>
         </section>
 
         <section id="experience">
