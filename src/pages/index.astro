@@ -13,7 +13,15 @@ import '../styles/global.css';
         </section>
 
         <section id="featured-work">
-            <h2>Featured work</h2>
+            <header>
+                <h2>Featured Work</h2>
+            </header>
+        </section>
+
+        <section id="experience">
+            <header>
+                <h2>Experience</h2>
+            </header>
         </section>
     </main>
 </Layout>
@@ -37,5 +45,16 @@ import '../styles/global.css';
         align-items: center;
         justify-content: flex-start;
         min-height: calc(100dvh - var(--navbar-height));
+    }
+
+    section:last-child {
+        max-height: calc(100dvh - var(--navbar-height));
+    }
+    header {
+        padding-top: calc(24px + var(--navbar-height));
+    }
+
+    header > h2{
+        font-size: 3rem; 
     }
 </style>
