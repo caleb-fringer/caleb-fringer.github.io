@@ -1,13 +1,18 @@
 ---
-const { frontmatter } = Astro.props;
+import type { CollectionEntry} from 'astro:content';
+interface Props {
+    project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
 ---
 
 <div class="card">
     <div class="title-container">
-        <h3>{frontmatter.title}</h3>
+        <h3>{project.data.title}</h3>
     </div>
     <div class="desc-container">
-        <p class="desc">{frontmatter.description}</p>
+        <p class="desc">{project.data.description}</p>
     </div>
 </div>
 

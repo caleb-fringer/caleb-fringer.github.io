@@ -2,11 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import Socials from '../components/Socials.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
 import '../styles/global.css';
 
-import * as monkeyMinder from './projects/monkey-minder.md';
-const {frontmatter} = monkeyMinder;
-const Content = monkeyMinder.Content;
+const projects = await getCollection('projects');
 ---
 
 <Layout title="Caleb Fringer">
@@ -21,9 +20,11 @@ const Content = monkeyMinder.Content;
             <header>
                 <h2>Featured Work</h2>
             </header>
-            <ProjectCard frontmatter={ frontmatter }>
-                <Content />
-            </ProjectCard>
+            
+            <!-- Project Cards -->
+            {projects.map(project => ( 
+                <ProjectCard project={project} />
+            ))}
         </section>
 
         <section id="experience">
