@@ -22,9 +22,11 @@ const projects = await getCollection('projects');
             </header>
             
             <!-- Project Cards -->
-            {projects.map(project => ( 
-                <ProjectCard project={project} />
-            ))}
+            <div class="project-gallery">
+                {projects.map(project => ( 
+                    <ProjectCard project={project} />
+                ))}
+            </div>
         </section>
 
         <section id="experience">
@@ -65,5 +67,17 @@ const projects = await getCollection('projects');
 
     header > h2{
         font-size: 3rem; 
+    }
+
+    .project-gallery {
+        display: flex;
+        gap: 128px;
+        justify-content: flex-start;
+        width: calc(100vw - 32px);
+        max-width: 1100px;
+        padding: 8px 20px 24px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        overscroll-behavior-x: contain;
     }
 </style>

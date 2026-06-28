@@ -20,6 +20,9 @@ const { project } = Astro.props;
 .card {
     display: flex;
     flex-direction: column;
+    flex: 0 0 clamp(260px, 70vw, 420px);
+    box-sizing: border-box;
+    scroll-snap-align: center;
     padding: 2px 16px;
     border: 1px solid black;
     border-radius: 1.4rem;
