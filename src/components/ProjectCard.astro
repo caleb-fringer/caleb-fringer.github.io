@@ -1,0 +1,35 @@
+---
+const { frontmatter } = Astro.props;
+---
+
+<div class="card">
+    <div class="title-container">
+        <h3>{frontmatter.title}</h3>
+    </div>
+    <div class="desc-container">
+        <p class="desc">{frontmatter.description}</p>
+    </div>
+</div>
+
+<style>
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 2px 16px;
+    border: 1px solid black;
+    border-radius: 1.4rem;
+}
+.title-container {
+    display: flex;
+    height: min-content;
+    width: fit-content;
+    padding-right: 4px;
+    border-bottom: 1px solid black;
+}
+.title-container > h3 {
+    margin: 8px 0px;
+}
+.desc-container {
+    height: max-content;
+}
+</style>
