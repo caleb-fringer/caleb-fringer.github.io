@@ -1,24 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Socials from '../components/Socials.astro';
+import '../styles/global.css';
 ---
 
 <Layout title="Caleb Fringer">
     <main>
-        <h1>Caleb Fringer</h1>
-        <h2>Software Engineer</h2>
-        <Socials />
+        <section id="hero">
+            <h1>Caleb Fringer</h1>
+            <h2>Software Engineer</h2>
+            <Socials />
+        </section>
+
+        <section id="featured-work">
+            <h2>Featured work</h2>
+        </section>
     </main>
 </Layout>
 
 <style>
-    main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-    }
-    
     h1 {
         font-size: 4rem;
         padding: 16px 32px;
@@ -29,5 +29,13 @@ import Socials from '../components/Socials.astro';
         font-size: 1.5rem;
         margin: 0px;
         margin-bottom: 16vh;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: calc(100dvh - var(--navbar-height));
     }
 </style>
