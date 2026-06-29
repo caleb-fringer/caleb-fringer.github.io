@@ -1,0 +1,16 @@
+.piano_container {
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+    width: 80vw;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 18px 24px 2px;
+    gap: 2px;
+}
+
+.piano_key {
+    width: 4rem;
+    border-radius: 4px 4px 8px 8px;
+}

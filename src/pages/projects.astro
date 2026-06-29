@@ -1,12 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Piano from '../components/Piano/Piano';
 ---
 
 <Layout title="Projects">
     <h1>Projects</h1>
-    <ul>
-        <li>
-            <!-- <a href="/projects/monkey-minder">Monkey Minder</a> -->
-        </li>
-    </ul>
+    <div id="app">
+        <Piano client:load/>
+    </div>
 </Layout>
+
+<style>
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+</style>
