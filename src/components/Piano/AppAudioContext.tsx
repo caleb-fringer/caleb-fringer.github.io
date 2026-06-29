@@ -24,5 +24,9 @@ export function AppAudioProvider(props: ParentProps) {
 }
 
 export function useAudio() {
-    return useContext(AppAudioContext);
+    const audio = useContext(AppAudioContext);
+    if (!audio) {
+        throw new Error("useAudio must be used inside AppAudioProvider");
+    }
+    return audio;
 }
