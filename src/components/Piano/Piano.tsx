@@ -8,7 +8,7 @@ function Piano() {
 
     return (
         <AppAudioProvider>
-            <div class={styles.piano_container}>
+            <div class={styles["piano-container"]}>
                 {notes.map(note => (
                     <Key note={note} />
                 ))}

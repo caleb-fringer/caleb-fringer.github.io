@@ -1,4 +1,4 @@
-.piano_container {
+.piano-container {
     display: flex;
     justify-content: center;
     height: 20vh;
@@ -10,7 +10,7 @@
     gap: 2px;
 }
 
-.piano_key {
+.piano-key {
     width: 4rem;
     border-radius: 4px 4px 8px 8px;
 }

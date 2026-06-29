@@ -26,7 +26,7 @@ function Key({ note }: Props) {
 
     return (
         <button
-            class={styles.piano_key}
+            class={styles["piano-key"]}
             onpointerdown={playNote}
             onpointerup={stopPlaying}
         >
