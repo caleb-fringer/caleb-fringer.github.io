@@ -1,16 +1,16 @@
 import { AppAudioProvider } from './AppAudioContext';
-import Key from './Key';
+import { Key } from './Key';
 import styles from './Piano.module.css';
-
-const notes = ['c', 'c#', 'd', 'd#', 'e', 'f', 'f#', 'g', 'g#', 'a', 'a#', 'b'];
+import { GeneratePitchRange, Pitch } from './Pitches';
 
 function Piano() {
+    const pitches = GeneratePitchRange(new Pitch("c", 4), new Pitch("c", 5));
 
     return (
         <AppAudioProvider>
             <div class={styles["piano-container"]}>
-                {notes.map(note => (
-                    <Key note={note} />
+                {pitches.map(pitch => (
+                    <Key pitch={pitch} />
                 ))}
             </div>
         </AppAudioProvider>

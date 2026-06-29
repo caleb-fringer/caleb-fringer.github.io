@@ -1,27 +1,29 @@
 import { useAudio } from './AppAudioContext';
 import styles from './Piano.module.css';
+import type { Pitch } from './Pitches';
 
-interface Props {
-    note: string;
+export interface Props {
+    pitch: Pitch;
 }
 
-function Key({ note }: Props) {
+export function Key({ pitch }: Props) {
     const { getAudio } = useAudio();
-    let osc: OscillatorNode | undefined;
+    let osc: OscillatorNode | null;
 
     const playNote = () => {
         const audio = getAudio();
 
-        osc = audio.createOscillator();
-        osc!.frequency.value = 440;
-        osc!.connect(audio.destination);
-        osc!.start();
+        osc = new OscillatorNode(audio, {
+            frequency: pitch.frequency
+        });
+        osc.connect(audio.destination);
+        osc.start();
     }
 
     const stopPlaying = () => {
         osc!.stop();
         osc!.disconnect();
-        osc = undefined;
+        osc = null;
     }
 
     return (
@@ -30,10 +32,8 @@ function Key({ note }: Props) {
             onpointerdown={playNote}
             onpointerup={stopPlaying}
         >
-            {note}
+            {pitch.note}
         </button>
 
     )
 }
-
-export default Key;
