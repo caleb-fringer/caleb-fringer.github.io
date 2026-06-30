@@ -12,14 +12,14 @@
         position: sticky;
         top: 0;
         z-index: 100;
-        padding: 8px 24px;
+        padding: 8px 12px;
         background-color: black;
         font-size: var(--navbar-font-size);
         display: flex;
         justify-content: space-between;
     }
     a {
-        padding: 8px 16px;
+        padding: 8px 8px;
         color: white;
     }
     a:link, a:visited {
@@ -27,5 +27,15 @@
     }
     #pages {
         display: flex;
+    }
+
+    @media screen and (min-width:600px) {
+        nav {
+            padding: 8px 24px;
+        }
+        
+        a {
+            padding: 8px 16px;
+        }
     }
 </style>
